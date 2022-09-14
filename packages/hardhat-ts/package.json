@@ -16,7 +16,7 @@
     "send": "hardhat send",
     "generate": "hardhat generate",
     "account": "hardhat account",
-    "verify": "hardhat etherscan-verify --api-key 2RZ6C36ENA4P66F8GNMHF5QBB78T9HMZPN"
+    "verify": "hardhat etherscan-verify --api-key 2RZ6C36ENA4P66F8GNMHF5QBB78T9HMZPN --network goerli"
   },
   "dependencies": {
     "@eth-optimism/hardhat-ovm": "^0.2.2",
