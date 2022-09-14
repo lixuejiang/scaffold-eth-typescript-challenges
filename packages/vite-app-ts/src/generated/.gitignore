@@ -5,4 +5,5 @@
 !contracts
 !/contracts/external_contracts.js
 !/contracts/external_contracts.ts
+!/contracts/hardhat_contracts.json
 !/contract-types
