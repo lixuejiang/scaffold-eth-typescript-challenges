@@ -28,7 +28,7 @@ contract Vendor is Ownable {
   // ToDo: create a withdraw() function that lets the owner withdraw ETH
   function withdraw() external onlyOwner {
     require(address(this).balance > 0);
-    require(payable(address(this)).send(address(this).balance));
+    require(payable(msg.sender).send(address(this).balance));
   }
 
   // ToDo: create a sellTokens() function:
