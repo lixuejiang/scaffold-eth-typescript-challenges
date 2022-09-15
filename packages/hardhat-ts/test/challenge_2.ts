@@ -81,6 +81,9 @@ describe("🚩 Challenge 2: 🏵 Token Vendor 🤖", function () {
       const startingBalance = await yourToken.balanceOf(owner.address)
       console.log('\t'," ⚖️ Starting balance: ",ethers.utils.formatEther(startingBalance))
 
+       const vendorBalance = await yourToken.balanceOf(vendor.address)
+      console.log('\t'," ⚖️ vendorBalance balance: ",ethers.utils.formatEther(vendorBalance))
+
       console.log('\t'," 💸 Buying...")
       const buyTokensResult = await vendor.buyTokens({value: ethers.utils.parseEther("0.001")});
       console.log('\t'," 🏷  buyTokens Result: ",buyTokensResult.hash)
@@ -114,6 +117,10 @@ describe("🚩 Challenge 2: 🏵 Token Vendor 🤖", function () {
       console.log('\t'," ⏳ Waiting for confirmation...")
       const atxResult =  await approveTokensResult.wait()
       expect(atxResult.status).to.equal(1);
+
+      const vendorETHBalance = await ethers.provider.getBalance(vendor.address)
+      console.log('\t'," ⚖️ vendor ETH balance: ",ethers.utils.formatEther(vendorETHBalance))
+
 
       console.log('\t'," 🍾 Selling...")
       const sellTokensResult = await vendor.sellTokens(ethers.utils.parseEther("0.1"));
